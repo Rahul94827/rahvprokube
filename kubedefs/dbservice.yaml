@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: vprodb # Name of the Service
+spec:
+  ports:
+    - port: 3306 # The port the Service itself exposes
+      targetPort: vprodb-port # The port on the backend Pods to forward traffic to
+      protocol: TCP
+  selector:
+    app: vprodb
+  type: ClusterIP
