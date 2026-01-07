@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: db-pv-claim
+  labels:
+    app: vprod
+  storageClassName: default # Name of a storage class defined in your cluster (e.g., provided by your cloud provider)
+  accessModes:
+    - ReadWriteOnce # Can be mounted as read-write by a single node
+  resources:
+    requests:
+      storage: 3Gi # Requests 1 Gigabyte of storage
